@@ -12,7 +12,7 @@ describe('find config', () => {
   beforeEach(async () => {
     await fs.ensureDir(fixtureDir)
   })
-  afterEach(() => fs.remove(declarationFile))
+  afterEach(async () => await fs.remove(declarationFile))
 
   it('should preserve CRLF EOL', async () => {
     const eol = '\r\n'
